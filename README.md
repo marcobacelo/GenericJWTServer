@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # JWT Server com Java 21 e Spring 6
 
 Este é um projeto de exemplo para demonstrar como criar um servidor JWT simples usando Java 21 e Spring 6.
@@ -13,7 +12,7 @@ Este é um projeto de exemplo para demonstrar como criar um servidor JWT simples
 
 - Java 21
 - Spring 6
-- Maven
+- Gradle
 
 ## Instalação
 

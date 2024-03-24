@@ -2,6 +2,7 @@ package com.jwt.server.jwtserver.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 @Getter
 @Entity
@@ -15,16 +16,12 @@ public class Role {
     private String name;
 
     @Getter
+    @RequiredArgsConstructor
     public enum Values {
 
         ADMIN(1L),
         BASIC(2L);
 
         final long roleId;
-
-        Values(long roleId) {
-            this.roleId = roleId;
-        }
-
     }
 }

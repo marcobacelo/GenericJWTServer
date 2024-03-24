@@ -29,10 +29,10 @@ public class AdminUserConfig implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) {
-        final String ADMIN_ROLE = "ADMIN";
+        final String ADMIN_ROLE = Role.Values.ADMIN.name();
 
-        var roleAdmin = roleRepository.findByName(Role.Values.ADMIN.name());
         var userAdmin = userRepository.findByUsername(ADMIN_ROLE);
+        var roleAdmin = roleRepository.findByName(ADMIN_ROLE);
 
         userAdmin.ifPresentOrElse(
                 user -> System.out.println("'ADMIN' já existe"),

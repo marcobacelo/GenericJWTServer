@@ -1,5 +1,7 @@
 server:
   port: 32700
+  servlet:
+    context-path: /jwtTokenProvider
 
 jwt:
   private:
@@ -8,18 +10,18 @@ jwt:
     key: classpath:app.pub
 
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    password: aR7Ea16ZiJjD
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/jwtDatabase
-    username: jwt_adm_user
+  sql:
+    init:
+      mode: always
 
   jpa:
     defer-datasource-initialization: true
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false
 
-  sql:
-    init:
-      mode: always
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: jwt_adm_user
+    password: aR7Ea16ZiJjD
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/jwtDatabase

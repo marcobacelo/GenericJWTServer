@@ -1,7 +1,9 @@
 package com.jwt.server.jwtserver.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
+@Getter
 @Entity
 @Table(name = "tb_roles")
 public class Role {
@@ -12,35 +14,17 @@ public class Role {
     private Long roleId;
     private String name;
 
-    public Long getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    @Getter
     public enum Values {
 
         ADMIN(1L),
         BASIC(2L);
 
-        long roleId;
+        final long roleId;
 
         Values(long roleId) {
             this.roleId = roleId;
         }
 
-        public long getRoleId() {
-            return roleId;
-        }
     }
 }

@@ -10,16 +10,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Set;
 
 @RestController
+@RequestMapping("/users")
 public class UserController {
 
     private final UserRepository userRepository;
@@ -35,9 +33,8 @@ public class UserController {
     }
 
     @Transactional
-    @PostMapping("/users")
+    @PostMapping
     public ResponseEntity<Void> newUser(@RequestBody CreateUserDto dto) {
-
         var basicRole = roleRepository.findByName(Role.Values.BASIC.name());
 
         var userFromDb = userRepository.findByUsername(dto.username());
@@ -55,7 +52,7 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/users")
+    @GetMapping
     @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
     public ResponseEntity<List<User>> listUsers() {
         var users = userRepository.findAll();

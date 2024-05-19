@@ -5,7 +5,7 @@ Este é um projeto de exemplo para demonstrar como criar um servidor JWT simples
 [![Java 21](https://img.shields.io/badge/Java-21-blue)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 [![Spring 6](https://img.shields.io/badge/Spring-6-green)](https://spring.io/)
 [![JWT](https://img.shields.io/badge/JWT-Authentication-yellow)](https://jwt.io/)
-[![Gradle](https://img.shields.io/badge/Gradle-8.6-blue)](https://gradle.org/releases/)
+[![Gradle](https://img.shields.io/badge/Gradle-8.7-blue)](https://gradle.org/releases/)
 
 
 ## Requisitos
